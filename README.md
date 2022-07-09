@@ -3,6 +3,19 @@ The Labyrinth Lord Advanced Companion Magic-User Character Generator Version 2 i
 
 ---------
 
+A live version of the Labyrinth Lord Advanced Companion Magic-User Character Generator Version 2 is available at the following link:
+
+https://www.oldschooladventures.org/ll/classes2/magic_user/
+
+---------
+
+
+Update 1.01: 2022-07-09
+
+Updates to magic-user.php, magic-user.css, classDetails.php, demiHumans.php, gear.php, spells.php. weapons.php, xp.php.  A link to the live version of the Labyrinth Lord Advanced Companion Magic-User Character Generator Version 2 has been added.
+
+
+
 Initial commit: 2022-07-06
 
 The initial commit for the Labyrinth Lord Advanced Companion Magic-User Character Generator Version 2.
