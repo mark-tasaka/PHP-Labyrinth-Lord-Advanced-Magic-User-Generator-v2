@@ -228,21 +228,6 @@ body{
 }
 
 
-#clothingList{
-    position:absolute;
-    top: 635px;
-    left: 670px;
-	font-size: 0.6em;
-}
-
-#clothingList2{
-    position:absolute;
-    top: 635px;
-    left: 925px;
-	font-size: 0.6em;
-}
-
-
 #totalWeightGear{
     position:absolute;
     top: 770px;
@@ -299,10 +284,9 @@ body{
 
 #abilityScoreGeneration{
     position:absolute;
-    top: 1220px;
-    left: 15px;
+    top: 1176px;
+    left: 35px;
     font-size: 0.5em;
-    width:550px;
 }
 
 
@@ -443,70 +427,70 @@ body{
 
 #meleeHitAC0{
     position:absolute;
-    top: 833px;
+    top: 840px;
     left: 130px;
 	font-size: 1em;
 }
 
 #meleeHitAC1{
     position:absolute;
-    top: 833px;
+    top: 840px;
     left: 178px;
 	font-size: 1em;
 }
 
 #meleeHitAC2{
     position:absolute;
-    top: 833px;
+    top: 840px;
     left: 226px;
 	font-size: 1em;
 }
 
 #meleeHitAC3{
     position:absolute;
-    top: 833px;
+    top: 840px;
     left: 278px;
 	font-size: 1em;
 }
 
 #meleeHitAC4{
     position:absolute;
-    top: 833px;
+    top: 840px;
     left: 328px;
 	font-size: 1em;
 }
 
 #meleeHitAC5{
     position:absolute;
-    top: 833px;
+    top: 840px;
     left: 380px;
 	font-size: 1em;
 }
 
 #meleeHitAC6{
     position:absolute;
-    top: 833px;
+    top: 840px;
     left: 430px;
 	font-size: 1em;
 }
 
 #meleeHitAC7{
     position:absolute;
-    top: 833px;
+    top: 840px;
     left: 482px;
 	font-size: 1em;
 }
 
 #meleeHitAC8{
     position:absolute;
-    top: 833px;
+    top: 840px;
     left: 534px;
 	font-size: 1em;
 }
 
 #meleeHitAC9{
     position:absolute;
-    top: 833px;
+    top: 840px;
     left: 586px;
 	font-size: 1em;
 }
@@ -515,76 +499,209 @@ body{
 
 #missileHitAC0{
     position:absolute;
-    top: 869px;
+    top: 876px;
     left: 130px;
 	font-size: 1em;
 }
 
 #missileHitAC1{
     position:absolute;
-    top: 869px;
+    top: 876px;
     left: 178px;
 	font-size: 1em;
 }
 
 #missileHitAC2{
     position:absolute;
-    top: 869px;
+    top: 876px;
     left: 226px;
 	font-size: 1em;
 }
 
 #missileHitAC3{
     position:absolute;
-    top: 869px;
+    top: 876px;
     left: 278px;
 	font-size: 1em;
 }
 
 #missileHitAC4{
     position:absolute;
-    top: 869px;
+    top: 876px;
     left: 328px;
 	font-size: 1em;
 }
 
 #missileHitAC5{
     position:absolute;
-    top: 869px;
+    top: 876px;
     left: 380px;
 	font-size: 1em;
 }
 
 #missileHitAC6{
     position:absolute;
-    top: 869px;
+    top: 876px;
     left: 430px;
 	font-size: 1em;
 }
 
 #missileHitAC7{
     position:absolute;
-    top: 869px;
+    top: 876px;
     left: 482px;
 	font-size: 1em;
 }
 
 #missileHitAC8{
     position:absolute;
-    top: 869px;
+    top: 876px;
     left: 534px;
 	font-size: 1em;
 }
 
 #missileHitAC9{
     position:absolute;
-    top: 869px;
+    top: 876px;
     left: 586px;
 	font-size: 1em;
 }
 
+#level1Spells{
+    position:absolute;
+    top: 945px;
+    left: 196px;
+	font-size: 1em;
+}
 
 
+#level2Spells{
+    position:absolute;
+    top: 945px;
+    left: 243px;
+	font-size: 1em;
+}
+
+
+#level3Spells{
+    position:absolute;
+    top: 945px;
+    left: 292px;
+	font-size: 1em;
+}
+
+#level4Spells{
+    position:absolute;
+    top: 945px;
+    left: 343px;
+	font-size: 1em;
+}
+
+#level5Spells{
+    position:absolute;
+    top: 945px;
+    left: 395px;
+	font-size: 1em;
+}
+
+#level6Spells{
+    position:absolute;
+    top: 945px;
+    left: 446px;
+	font-size: 1em;
+}
+
+#level7Spells{
+    position:absolute;
+    top: 945px;
+    left: 495px;
+	font-size: 1em;
+}
+
+#level8Spells{
+    position:absolute;
+    top: 945px;
+    left: 546px;
+	font-size: 1em;
+}
+
+#level9Spells{
+    position:absolute;
+    top: 945px;
+    left: 595px;
+	font-size: 1em;
+}
+
+#turnUndeadHD1{
+    position:absolute;
+    top: 1019px;
+    left: 188px;
+	font-size: 1em;
+}
+
+
+#turnUndeadHD2{
+    position:absolute;
+    top: 1019px;
+    left: 231px;
+	font-size: 1em;
+}
+
+#turnUndeadHD3{
+    position:absolute;
+    top: 1019px;
+    left: 276px;
+	font-size: 1em;
+}
+
+#turnUndeadHD4{
+    position:absolute;
+    top: 1019px;
+    left: 323px;
+	font-size: 1em;
+}
+
+#turnUndeadHD5{
+    position:absolute;
+    top: 1019px;
+    left: 365px;
+	font-size: 1em;
+}
+
+#turnUndeadHD6{
+    position:absolute;
+    top: 1019px;
+    left: 411px;
+	font-size: 1em;
+}
+
+#turnUndeadHD7{
+    position:absolute;
+    top: 1019px;
+    left: 454px;
+	font-size: 1em;
+}
+
+#turnUndeadHD8{
+    position:absolute;
+    top: 1019px;
+    left: 496px;
+	font-size: 1em;
+}
+
+#turnUndeadHD9{
+    position:absolute;
+    top: 1019px;
+    left: 548px;
+	font-size: 1em;
+}
+
+#turnUndeadHD10{
+    position:absolute;
+    top: 1019px;
+    left: 593px;
+	font-size: 1em;
+}
 
 #saveBreath{
     position:absolute;
@@ -623,10 +740,10 @@ body{
 
 #classAbilities{
     position:absolute;
-    top: 1080px;
-    left: 25px;
-	font-size: 0.55em;
-    width: 620px;
+    top: 990px;
+    left: 35px;
+	font-size: 0.6em;
+    width: 590px
 }
 
 #speed{
@@ -688,13 +805,6 @@ body{
     top: 420px;
     left: 220px;
 	font-size: 1.5em;
-}
-
-#hdMessage{
-    position:absolute;
-    top: 460px;
-    left: 95px;
-	font-size: 0.5em;
 }
 
 #reflex{
@@ -812,12 +922,6 @@ body{
 }
 
 
-#dieRollMethod{
-    position: absolute;
-    top: 108px;
-    left:  50px;
-	font-size: 0.5em;
-}
 
 
 #backstab{
@@ -864,7 +968,7 @@ body{
 
 #findTrap{
     position:absolute;
-    top: 866px;
+    top: 876px;
     left: 505px;
     font-size: 0.8em;
 }
@@ -912,124 +1016,23 @@ body{
 }
 
 
-#level1Spells{
+#clothingList{
     position:absolute;
-    top: 940px;
-    left: 228px;
-	font-size: 1em;
+    top: 635px;
+    left: 670px;
+	font-size: 0.6em;
 }
 
-
-#level2Spells{
+#clothingList2{
     position:absolute;
-    top: 940px;
-    left: 278px;
-	font-size: 1em;
+    top: 635px;
+    left: 925px;
+	font-size: 0.6em;
 }
 
-
-#level3Spells{
+#hdMessage{
     position:absolute;
-    top: 940px;
-    left: 328px;
-	font-size: 1em;
-}
-
-#level4Spells{
-    position:absolute;
-    top: 940px;
-    left: 378px;
-	font-size: 1em;
-}
-
-#level5Spells{
-    position:absolute;
-    top: 940px;
-    left: 428px;
-	font-size: 1em;
-}
-
-#level6Spells{
-    position:absolute;
-    top: 940px;
-    left: 478px;
-	font-size: 1em;
-}
-
-#level7Spells{
-    position:absolute;
-    top: 940px;
-    left: 528px;
-	font-size: 1em;
-}
-
-#turnUndeadHD1{
-    position:absolute;
-    top: 1019px;
-    left: 188px;
-	font-size: 1em;
-}
-
-
-#turnUndeadHD2{
-    position:absolute;
-    top: 1019px;
-    left: 231px;
-	font-size: 1em;
-}
-
-#turnUndeadHD3{
-    position:absolute;
-    top: 1019px;
-    left: 276px;
-	font-size: 1em;
-}
-
-#turnUndeadHD4{
-    position:absolute;
-    top: 1019px;
-    left: 323px;
-	font-size: 1em;
-}
-
-#turnUndeadHD5{
-    position:absolute;
-    top: 1019px;
-    left: 365px;
-	font-size: 1em;
-}
-
-#turnUndeadHD6{
-    position:absolute;
-    top: 1019px;
-    left: 411px;
-	font-size: 1em;
-}
-
-#turnUndeadHD7{
-    position:absolute;
-    top: 1019px;
-    left: 454px;
-	font-size: 1em;
-}
-
-#turnUndeadHD8{
-    position:absolute;
-    top: 1019px;
-    left: 496px;
-	font-size: 1em;
-}
-
-#turnUndeadHD9{
-    position:absolute;
-    top: 1019px;
-    left: 538px;
-	font-size: 1em;
-}
-
-#turnUndeadHD10{
-    position:absolute;
-    top: 1019px;
-    left: 588px;
-	font-size: 1em;
+    top: 460px;
+    left: 95px;
+	font-size: 0.5em;
 }

@@ -1,6 +1,6 @@
 <?php
 
-/*Cleric */
+/*Magic-User */
 
 function getHitPoints($level, $conMod)
 {
@@ -10,12 +10,12 @@ function getHitPoints($level, $conMod)
     {
         for($i = 0; $i < $level; ++$i)
         {
-            $levelHP = rand(3, 6);
+            $levelHP = rand(2, 4);
             $levelHP += $conMod;
     
-            if($levelHP < 3)
+            if($levelHP < 2)
             {
-                $levelHP = 3;
+                $levelHP = 2;
             }
     
             $hitPoints += $levelHP;
@@ -26,12 +26,12 @@ function getHitPoints($level, $conMod)
     {
         for($i = 0; $i < 10; ++$i)
         {
-            $levelHP = rand(3, 6);
+            $levelHP = rand(2, 4);
             $levelHP += $conMod;
     
-            if($levelHP < 3)
+            if($levelHP < 2)
             {
-                $levelHP = 3;
+                $levelHP = 2;
             }
     
             $hitPoints += $levelHP;
@@ -100,25 +100,25 @@ function getAdvancedHitPoints($level, $conMod)
 
 function saveBreathAttack($level)
 {
-    if($level <= 4)
+    if($level <= 5)
     {
         return 16;
     }
-    else if($level >= 5 && $level <= 8)
+    else if($level >= 6 && $level <= 10)
     {
         return 14;
     }
-    else if($level >= 9 && $level <= 12)
+    else if($level >= 11 && $level <= 15)
     {
         return 12;
     }
-    else if($level >= 13 && $level <= 16)
+    else if($level >= 16 && $level <= 18)
     {
         return 8;
     }
     else
     {
-        return 6;
+        return 7;
     }
 
 }
@@ -126,96 +126,44 @@ function saveBreathAttack($level)
 
 function savePoisonDeath($level)
 {
-    if($level <= 4)
+    if($level <= 5)
+    {
+        return 13;
+    }
+    else if($level >= 6 && $level <= 10)
     {
         return 11;
     }
-    else if($level >= 5 && $level <= 8)
+    else if($level >= 11 && $level <= 15)
     {
         return 9;
     }
-    else if($level >= 9 && $level <= 12)
+    else if($level >= 16 && $level <= 18)
     {
         return 7;
     }
-    else if($level >= 13 && $level <= 16)
-    {
-        return 3;
-    }
     else
     {
-        return 2;
+        return 6;
     }
 }
 
 
 function savePetrify($level)
 {
-    if($level <= 4)
+    if($level <= 5)
     {
-        return 14;
+        return 13;
     }
-    else if($level >= 5 && $level <= 8)
+    else if($level >= 6 && $level <= 10)
     {
-        return 12;
+        return 11;
     }
-    else if($level >= 9 && $level <= 12)
-    {
-        return 10;
-    }
-    else if($level >= 13 && $level <= 16)
-    {
-        return 8;
-    }
-    else
-    {
-        return 6;
-    }
-
-}
-
-
-function saveWands($level)
-{
-    if($level <= 4)
-    {
-        return 12;
-    }
-    else if($level >= 5 && $level <= 8)
-    {
-        return 10;
-    }
-    else if($level >= 9 && $level <= 12)
-    {
-        return 8;
-    }
-    else if($level >= 13 && $level <= 16)
-    {
-        return 4;
-    }
-    else
-    {
-        return 4;
-    }
-
-}
-
-
-function saveSpells($level)
-{
-    if($level <= 4)
-    {
-        return 15;
-    }
-    else if($level >= 5 && $level <= 8)
-    {
-        return 12;
-    }
-    else if($level >= 9 && $level <= 12)
+    else if($level >= 11 && $level <= 15)
     {
         return 9;
     }
-    else if($level >= 13 && $level <= 16)
+    else if($level >= 16 && $level <= 18)
     {
         return 6;
     }
@@ -225,6 +173,58 @@ function saveSpells($level)
     }
 
 }
+
+
+function saveWands($level)
+{
+    if($level <= 5)
+    {
+        return 13;
+    }
+    else if($level >= 6 && $level <= 10)
+    {
+        return 11;
+    }
+    else if($level >= 11 && $level <= 15)
+    {
+        return 9;
+    }
+    else if($level >= 16 && $level <= 18)
+    {
+        return 5;
+    }
+    else
+    {
+        return 4;
+    }
+}
+
+
+function saveSpells($level)
+{
+    if($level <= 5)
+    {
+        return 14;
+    }
+    else if($level >= 6 && $level <= 10)
+    {
+        return 12;
+    }
+    else if($level >= 11 && $level <= 15)
+    {
+        return 8;
+    }
+    else if($level >= 16 && $level <= 18)
+    {
+        return 6;
+    }
+    else
+    {
+        return 4;
+    }
+
+}
+
 
 function primeReq($abilityScore)
 {
@@ -484,54 +484,46 @@ function charismaModifierDescription($abilityScore)
 }
 
 
-
 function getThaco($level, $abiltyMod)
 {
-    if($level == 1 || $level == 2 || $level == 3)
+    if($level >= 1 && $level <= 3)
     {
         $thaco = 19;
     }
-    else if($level == 4 || $level == 5)    
+    else if($level >= 4 && $level <= 7)    
     {
         $thaco = 18;
     }
-    else if($level == 6 || $level == 7 || $level == 8)    
+    else if($level >= 8 && $level <= 10)    
     {
         $thaco = 17;
     }
-    else if($level == 9 || $level == 10)    
+    else if($level >= 11 && $level <= 12)    
     {
         $thaco = 16;
     }
-    else if($level == 11)    
+    else if($level == 13)    
     {
         $thaco = 15;
     }
-    else if($level == 12)    
+    else if($level >= 14 && $level <= 15)    
     {
         $thaco = 14;
     }
-    else if($level == 13 || $level == 14)    
+    else if($level >= 16 && $level <= 18)    
     {
         $thaco = 13;
     }
-    else if($level == 15 || $level == 16)    
-    {
-        $thaco = 12;
-    }
-    else if($level == 17 || $level == 18)    
-    {
-        $thaco = 11;
-    }
     else
     {
-        $thaco = 10;
+        $thaco = 12;
     }
 
     $thaco -= $abiltyMod;
 
     return $thaco;
 }
+
 
 function getThacoCheck($score)
 {
@@ -549,8 +541,8 @@ function startingAge($species)
 
     if($species == "Human")
     {
-        $age += 16;
-        $dieRoll = rand(1, 4);
+        $age += 27;
+        $dieRoll = rand(1, 6);
         $age += $dieRoll;
     }
 
@@ -569,17 +561,15 @@ function startingAge($species)
 
     if($species == "Elf")
     {
-        $age += 125;
+        $age += 150;
         $dieRoll = rand(1, 8);
         $dieRoll2= rand(1, 8);
         $dieRoll3 = rand(1, 8);
         $dieRoll4 = rand(1, 8);
-        $dieRoll5 = rand(1, 8);
         $age += $dieRoll;
         $age += $dieRoll2;
         $age += $dieRoll3;
         $age += $dieRoll4;
-        $age += $dieRoll5;
     }
 
     if($species == "Gnome")
@@ -604,15 +594,13 @@ function startingAge($species)
 
     if($species == "Half-Elf")
     {
-        $age += 20;
+        $age += 35;
         $dieRoll = rand(1, 4);
         $dieRoll2= rand(1, 4);
         $dieRoll3 = rand(1, 4);
-        $dieRoll4= rand(1, 4);
         $age += $dieRoll;
         $age += $dieRoll2;
         $age += $dieRoll3;
-        $age += $dieRoll4;
     }
 
     if($species == "Half-Orc")
@@ -626,5 +614,69 @@ function startingAge($species)
 
 }
 
+function mageAbilities($level)
+{
+    
+    if($level == 9 || $level == 10)
+        {
+            $message = "Ability to create spells and magic items.";
+        }
+    else if($level >= 11)
+        {
+            $message = "Ability to create spells and magic items.<br/>Can build a stronghold (i.e. wizard's tower); attract 1d6 magic-user apprentices (Level 1-3).";
+        }
+    else
+    {
+        $message = "";
+    }
+    
+    return $message;
+}
+
+
+
+function spellProbability ($intelligence)
+{
+    $message = "";
+    
+    if($intelligence === 3)
+        {
+            $message = "20% spell learning probability; minimum spells per level: 2; maximum spells per level: 3";
+        }
+    else if($intelligence >= 4 && $intelligence <= 5)
+        {
+            $message = "30% spell learning probability; minimum spells per level: 2; maximum spells per level: 4";
+        }
+    else if($intelligence >= 6 && $intelligence <= 7)
+        {
+            $message = "35% spell learning probability; minimum spells per level: 2; maximum spells per level: 5";
+        }
+    else if($intelligence >= 8 && $intelligence <= 9)
+        {
+            $message = "40% spell learning probability; minimum spells per level: 3; maximum spells per level: 6";
+        }
+    else if($intelligence >= 10 && $intelligence <= 12)
+        {
+            $message = "50% spell learning probability; minimum spells per level: 4; maximum spells per level: 7";
+        }
+    else if($intelligence >= 13 && $intelligence <= 14)
+        {
+            $message = "70% spell learning probability; minimum spells per level: 5; maximum spells per level: 9";
+        }
+    else if($intelligence >= 15 && $intelligence <= 16)
+        {
+            $message = "75% spell learning probability; minimum spells per level: 6; maximum spells per level: 11";
+        }
+    else if($intelligence === 17)
+        {
+            $message = "85% spell learning probability; minimum spells per level: 7; maximum spells per level: Unlimited";
+        }
+    else if($intelligence === 18)
+        {
+            $message = "90% spell learning probability; minimum spells per level: 8; maximum spells per level: Unlimited";
+        }
+    
+    return $message;
+}
 
 ?>

@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Advanced Labyrinth Lord Cleric Character Generator Version 2</title>
+<title>Advanced Labyrinth Lord Magic-User Character Generator Version 2</title>
  
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
 	<meta charset="UTF-8">
-	<meta name="description" content="Labyrinth Lord Advance Companion Cleric Character Generator..">
+	<meta name="description" content="Labyrinth Lord Advance Companion Magic-User Character Generator..">
 	<meta name="keywords" content="Labyrinth Lord Advance Companion,,HTML5,CSS,JavaScript">
 	<meta name="author" content="Mark Tasaka 2022">
     
     <link rel="icon" href="../../../../images/favicon/icon.png" type="image/png" sizes="16x16"> 
 		
 
-	<link rel="stylesheet" type="text/css" href="css/cleric.css">
+	<link rel="stylesheet" type="text/css" href="css/magic-user.css">
     
     
     
@@ -24,7 +24,6 @@
     <!--PHP-->
     <?php
     
-    include 'php/armour.php';
     include 'php/checks.php';
     include 'php/weapons.php';
     include 'php/gear.php';
@@ -39,7 +38,6 @@
     include 'php/clothing.php';
     include 'php/demiHumans.php';
     include 'php/spells.php';
-    include 'php/turnUndead.php';
     include 'php/abilityAddition.php';
     
 
@@ -281,7 +279,7 @@
         $wisdomMod = getAbilityModifier($wisdom);
         $charismaMod = getAbilityModifier($charisma);
 
-
+/*
         if(isset($_POST["theArmour"]))
         {
             $armour = $_POST["theArmour"];
@@ -308,29 +306,17 @@
         $shieldWeight = getShield($shield)[2];
 
        $totalAcDefense = $armourACBonus + $shieldACBonus;
-
+*/
 
        //$speed = 30;
 
 
        $baseArmourClass = 9 - $dexterityMod;
 
-       $armourClass = $baseArmourClass + $totalAcDefense;
+       $armourClass = $baseArmourClass;
 
-
-       if(isset($_POST['theAdvancedHD']) && $_POST['theAdvancedHD'] == 1) 
-       {
-           $hitPoints = getAdvancedHitPoints($level, $constitutionMod);   
-           $hdMessage = "HD: d8 (Adv HD)";
-       }
-       else
-       {
-            //Hit Points
-            $hitPoints = getHitPoints($level, $constitutionMod);
-            $hdMessage = "HD: d6";
-        }
-       
-
+        $hitPoints = getHitPoints($level, $constitutionMod);
+        $hdMessage = "HD: d4";
 
 
         $weaponArray = array();
@@ -376,7 +362,7 @@
         $totalWeaponWeight += getWeapon($select)[2];
     }
 
-    $armourAndWeapomWeight = $totalWeaponWeight + $armourWeight + $shieldWeight;
+    $armourAndWeapomWeight = $totalWeaponWeight;
     
         $gearArray = array();
         $gearNames = array();
@@ -491,10 +477,11 @@
         $saveSpells -= $wisdomMod;
         $saveSpells -= $saveSpellsMod;
 
-        $primeReq = primeReq($strength);
+        $primeReq = primeReq($intelligence);
         $resSurvival = survivalResurrection($constitution);
         $shockSurvival = survivalShock($constitution);
-        $wisdomBonusSpells = wisdomBonusCleric($wisdom);
+        $spellProb = spellProbability ($intelligence);
+        $mageAbility = mageAbilities($level);
         $demiHumanTraits = demiHumanTraits($species);
 
         $strengthDescription = strengthModifierDescription($strength);
@@ -546,33 +533,15 @@
         $missileHitAC9 = $missileHitAC0  - 9;
         $missileHitAC9 = getThacoCheck($missileHitAC9);
 
-        $level1BonusSpells = addSpellsLevel1($wisdom);
-        $level2BonusSpells = addSpellsLevel2($level, $wisdom);
-        $level3BonusSpells = addSpellsLevel3($level, $wisdom);
-        $level4BonusSpells = addSpellsLevel4($level, $wisdom);
-    
         $level1Spells = spellsLevel1($level);
-        $level1Spells += $level1BonusSpells;
         $level2Spells = spellsLevel2($level);
-        $level2Spells += $level2BonusSpells;
         $level3Spells = spellsLevel3($level);
-        $level3Spells += $level3BonusSpells;
         $level4Spells = spellsLevel4($level);
-        $level4Spells += $level4BonusSpells;
         $level5Spells = spellsLevel5($level);
         $level6Spells = spellsLevel6($level);
         $level7Spells = spellsLevel7($level);
-
-        $turnUndeadHD1 = undeadHD1($level);
-        $turnUndeadHD2 = undeadHD2($level);
-        $turnUndeadHD3 = undeadHD3($level);
-        $turnUndeadHD4 = undeadHD4($level);
-        $turnUndeadHD5 = undeadHD5($level);
-        $turnUndeadHD6 = undeadHD6($level);
-        $turnUndeadHD7 = undeadHD7($level);
-        $turnUndeadHD8 = undeadHD8($level);
-        $turnUndeadHD9 = undeadHD9($level);
-        $turnUndeadHD10 = undeadHD10($level);
+        $level8Spells = spellsLevel8($level);
+        $level9Spells = spellsLevel9($level);
     
     ?>
 
@@ -829,7 +798,7 @@
        
        
        
-       <span id="class">Cleric</span>
+       <span id="class">Magic-User</span>
        
        <span id="armourClass">
            <?php
@@ -925,57 +894,6 @@
            ?></span>
         
 
-
-              
-       <span id="armourName">
-           <?php
-                echo $armourName;
-           ?>
-        </span>
-
-        <span id="armourACBonus">
-            <?php
-                echo $armourACBonus;
-            ?>
-        </span>
-
-        
-        <span id="armourWeight">
-            <?php
-                echo $armourWeight;
-            ?>
-        </span>
-
-                      
-       <span id="shieldName">
-           <?php
-
-           if($shield === 1)
-           {
-                echo $shieldName;
-           }
-           ?>
-        </span>
-              
-       <span id="shieldACBonus">
-           <?php
-           if($shield === 1)
-           {
-                echo $shieldACBonus;
-           }
-           ?>
-        </span>
-              
-       <span id="shieldWeight">
-           <?php
-           
-           if($shield === 1)
-           {
-                echo $shieldWeight;
-           }
-           ?>
-        </span>
-        
 
        
         <span id="weaponsList">
@@ -1156,7 +1074,9 @@
         <span id="classAbilities">
             <?php
                 echo $primeReq;
-                echo "Survive Resurrection " . $resSurvival . "%; Survive Transformative Shock " . $shockSurvival . "%<br/>" . $wisdomBonusSpells . "<br/>"; 
+                echo "Survive Resurrection " . $resSurvival . "%; Survive Transformative Shock " . $shockSurvival . "%<br/>"; 
+                echo $spellProb . "<br/>";
+                echo $mageAbility;
                 echo $demiHumanTraits;
             ?>
         </span>
@@ -1205,70 +1125,18 @@
             ?>
         </span>
         
-        
-        <span id="turnUndeadHD1">
+        <span id="level8Spells">
             <?php
-                echo $turnUndeadHD1;
-            ?>
-        </span>
-
-        
-        <span id="turnUndeadHD2">
-            <?php
-                echo $turnUndeadHD2;
+                echo $level8Spells;
             ?>
         </span>
         
-        <span id="turnUndeadHD3">
+        <span id="level9Spells">
             <?php
-                echo $turnUndeadHD3;
-            ?>
-        </span>
-
-        
-        <span id="turnUndeadHD4">
-            <?php
-                echo $turnUndeadHD4;
+                echo $level9Spells;
             ?>
         </span>
         
-        <span id="turnUndeadHD5">
-            <?php
-                echo $turnUndeadHD5;
-            ?>
-        </span>
-        
-        <span id="turnUndeadHD6">
-            <?php
-                echo $turnUndeadHD6;
-            ?>
-        </span>
-        
-        <span id="turnUndeadHD7">
-            <?php
-                echo $turnUndeadHD7;
-            ?>
-        </span>
-        
-        <span id="turnUndeadHD8">
-            <?php
-                echo $turnUndeadHD8;
-            ?>
-        </span>
-        
-        <span id="turnUndeadHD9">
-            <?php
-                echo $turnUndeadHD9;
-            ?>
-        </span>
-        
-        <span id="turnUndeadHD10">
-            <?php
-                echo $turnUndeadHD10;
-            ?>
-        </span>
-
-
 
         
        
@@ -1282,7 +1150,7 @@
       
 
   
-       let imgData = "images/cleric.png";
+       let imgData = "images/magic-user.png";
       
         $("#character_sheet").attr("src", imgData);
       

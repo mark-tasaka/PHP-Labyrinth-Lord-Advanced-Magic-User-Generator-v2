@@ -128,13 +128,13 @@ function levelLimit ($race, $level)
     }
     else if($race === "Elf")
     {
-        if($level <= 7)
+        if($level <= 11)
         {
             $characterLevel = $level;
         }
         else
         {
-            $characterLevel = 7;
+            $characterLevel = 11;
         }
     }
     else if($race === "Gnome")
@@ -161,13 +161,13 @@ function levelLimit ($race, $level)
     }
     else if($race === "Half-Elf")
     {
-        if($level <= 5)
+        if($level <= 10)
         {
             $characterLevel = $level;
         }
         else
         {
-            $characterLevel = 5;
+            $characterLevel = 10;
         }
     }
     else if($race === "Half-Orc")
